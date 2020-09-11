@@ -10,14 +10,13 @@ f = open('names_2.txt', 'r')
 names_2 = f.read().split("\n")  # List containing 10000 names
 f.close()
 
-# duplicates = []  # Return the list of duplicates in this data structure
-duplicates = [ name for name in names_1 if name in names_2 ]  # Return the list of duplicates in this data structure // 0.4 seconds slower than using stack
-
+duplicates = []  # Return the list of duplicates in this data structure
+# duplicates = [ name for name in names_1 if name in names_2 ]  # Return the list of duplicates in this data structure // 1.60 second runtime
 # Replace the nested for loops below with your improvements
 # for name_1 in names_1:
 #     for name_2 in names_2:
 #         if name_1 == name_2:
-#             duplicates.append(name_1)
+#             duplicates.append(name_1) // 8.96 second runtime
 
 '''class Stack:
     def __init__(self):
@@ -43,8 +42,9 @@ for name in names_1:
 
 for item in search.storage:
     if item in names_2:
-        duplicates.append(item)
-'''
+        duplicates.append(item) 
+# 1.57 second runtime'''
+
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
 print (f"runtime: {end_time - start_time} seconds")
