@@ -16,7 +16,7 @@ duplicates = []  # Return the list of duplicates in this data structure
 # for name_1 in names_1:
 #     for name_2 in names_2:
 #         if name_1 == name_2:
-#             duplicates.append(name_1) // 8.96 second runtime
+#             duplicates.append(name_1) #// 8.96 second runtime
 
 '''class Stack:
     def __init__(self):
@@ -35,11 +35,13 @@ duplicates = []  # Return the list of duplicates in this data structure
             return None
         self.size -= 1
         return self.storage.pop()
-
+# create a new stack
 search = Stack()
+# for every name in our first array, add that to our stack
 for name in names_1:
     search.push(name)
 
+# for each item on our stack, if it's in our second array append it to our duplicates
 for item in search.storage:
     if item in names_2:
         duplicates.append(item) 
